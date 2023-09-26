@@ -1,18 +1,13 @@
 ---@class Point
----@field X integer
----@field Y integer
+---@field x integer
+---@field y integer
 Point = {}
 
 ---@class Point3D
----@field X integer
----@field Y integer
----@field Z integer
+---@field x integer
+---@field y integer
+---@field z integer
 Point = {}
-
----@class Area
----@field X integer
----@field Y integer
-Area = {}
 
 ---@class RGB
 ---@field R integer
@@ -90,7 +85,7 @@ Visual = {}
 VideoSettings = {}
 
 ---@alias techId string
----@alias actionId string The ID of a user
+---@alias actionId string
 ---@alias factionId string
 ---@alias frameId string
 ---@alias visualId string

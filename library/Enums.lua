@@ -5,7 +5,7 @@
 ---@alias ComponentSize "Hidden" | "Internal" | "Small" | "Medium" | "Large"
 ---@alias IdleMode "IDLE" | "STORE" | "MOVE" | "ORDER" | "COMPONENT" | "INTERACT" | "RETURN"
 ---@alias AddMode "auto" | "hidden"
----@alias FrameSize "Unit" | "Small" | "Medium" | "Large" | "Other"
+---@alias FrameSize "Unit" | "Small" | "Medium" | "Large" | "Special" | "Other"
 ---@alias FrameType "Operating" | "Decoration" | "Foundation" | "Wall" | "DroppedItem" | "Resource" | "Construction"
 ---@alias SlotType "storage" | "garage" | "liquid" | "radioactive" | "bughole" | "drone" | "flyer" | "satellite"
 ---@alias WindowMode "windowed" | "borderless" | "fullscreen"

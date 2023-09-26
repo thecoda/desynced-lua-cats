@@ -103,7 +103,7 @@ function Component:RegistersEqual(first_register, second_register) return false 
 ---Set a register of this component.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#component-setregister)
 ---@param register Register|integer Register reference
----@param value Register Register object value
+---@param value RegisterDef Register object value
 ---@param update_and_activate boolean? Force update the register and activate the component (OPTIONAL, default false)
 function Component:SetRegister(register, value, update_and_activate) end
 
@@ -276,7 +276,7 @@ function Component:OrderItem(into_slot, item_id, amount) return 0 end
 ---[Official Documentation](https://modding.desyncedgame.com/syntax.html#component-rotatecomponent)
 ---@param target Entity|Component|Point Target entity to look at
 ---@param rotate_entity_not_component boolean? If the entity has movement rotate it instead (OPTIONAL, default false)
----@overload fun(x: integer, y: integer, rotate_entity_not_component boolean?)
+---@overload fun(x: integer, y: integer, rotate_entity_not_component: boolean?)
 ---@overload fun(degrees: integer)
 function Component:RotateComponent(target, rotate_entity_not_component) end
 
@@ -284,9 +284,9 @@ function Component:RotateComponent(target, rotate_entity_not_component) end
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#component-requeststatemove)
 ---@param target Entity|Component|Point Target entity to move next to
 ---@param range integer? Range of how close by to stop (OPTIONAL, default 1)
----@param avoid_distractions boolean|nil Keep moving when component sleeps or starts working (OPTIONAL, default false)
+---@param avoid_distractions boolean? Keep moving when component sleeps or starts working (OPTIONAL, default false)
 ---@returns boolean # Returns true if movement is needed, otherwise the entity is already in place
----@overload fun(x: integer, y: integer, range integer?, avoid_distractions boolean|nil): boolean
+---@overload fun(x: integer, y: integer, range: integer?, avoid_distractions: boolean?): boolean
 function Component:RequestStateMove(target, range, avoid_distractions) return false end
 
 ---Request the component to sleep.
@@ -300,7 +300,7 @@ function Component:SetStateSleep(tick_count, keep_movement_control) end
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#component-setstatestartwork)
 ---@param tick_count integer? Number of ticks to work (OPTIONAL, default 5)
 ---@param refresh boolean|integer|nil Refresh flag, number of ticks or true for 5 (OPTIONAL, default false)
-function Component:SetStateStartWork(p1, p2) end
+function Component:SetStateStartWork(tick_count, refresh) end
 
 ---Notify other components waiting for this with CC_OTHER_COMP_FAIL_WORK.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#component-notifyworkfailed)

@@ -220,9 +220,9 @@ function Entity:RegistersEqual(first_register, second_register) return false end
 ---Set a register of this entity.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-setregister)
 ---@param register Register|integer Register reference
----@param value Register? Register object value
+---@param def RegisterDef? Register object value
 ---@param force_update_and_activate boolean? Force update the register and activate components (OPTIONAL, default false)
-function Entity:SetRegister(register, value, force_update_and_activate) end
+function Entity:SetRegister(register, def, force_update_and_activate) end
 
 ---Set the number part of a register of this entity.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-setregisternum)

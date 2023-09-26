@@ -51,8 +51,8 @@ function Map.GetSave(mod_id) return {} end
 ---Call bound MapMsg functions
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#map-run)
 ---@param message_name string Message name registered in MapMsg
----@param values any? Passed values (OPTIONAL, can pass multiple values)
-function Map.Run(message_name, values) end
+---@param ... any Passed values (OPTIONAL, can pass multiple values)
+function Map.Run(message_name, ...) end
 
 ---Get the current simulation tick number.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#map-gettick)

@@ -19,7 +19,7 @@ function Tool.TableToString(value, identifier_char) return "" end
 ---Convert a string back to a lua table.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#tool-stringtotable)
 ---@param encoded_string string Encoded string
----@param identifier_char string A one character identifier to be included in the prefix of the encoded string
+---@param identifier_char string? A one character identifier to be included in the prefix of the encoded string
 ---@returns table # Table
 function Tool.StringToTable(encoded_string, identifier_char) return {} end
 
