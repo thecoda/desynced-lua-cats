@@ -38,8 +38,6 @@ MapMsg = EventListener
 ---@param msg_string componentId
 function L(msg_string, ...) end
 
---- ToDo: Add documentation
-data = {}
 
 --- ToDo: Add documentation
 ModPackage = {}

@@ -110,3 +110,5 @@ VideoSettings = {}
 ---@alias rgbArray {[1]: integer, [2]: integer, [3]: integer}
 ---@alias rgbaArray {[1]: integer, [2]: integer, [3]: integer, [4]: integer}
 ---@alias color hexLuminance|hexLuminanceAlpha|hexRgb|hexRgba|ue4Color|colorName|rgbArray|rgbaArray
+
+---@alias Location Point|Entity

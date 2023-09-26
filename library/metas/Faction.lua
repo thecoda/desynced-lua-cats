@@ -68,7 +68,7 @@ function Faction:GetPowerGrid(grid_index) return {} end
 ---Check if a tile or area is in a power grid of this faction.
 --- If the checking area is larger than one tile, will only return the first power grid found.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#faction-getpowergridindexat)
----@param location Area|Point|Entity Location to check
+---@param location Location Location to check
 ---@returns integer? # Index of the power grid (or nil if not inside any power grid)
 function Faction:GetPowerGridIndexAt(location) return 0 end
 
@@ -153,26 +153,26 @@ function Faction:CanPlace(frame_id, x, y, rotation, from_id, construction_flag, 
 
 ---Reveal visibility of an area.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#faction-revealarea)
----@param location Area|Point|Entity Area
+---@param location Location
 ---@param range integer Visibility range
 function Faction:RevealArea(location, range) end
 
 ---Hide visibility of an area.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#faction-hidearea)
----@param location Area|Point|Entity Area
+---@param location Location
 ---@param range integer Visibility range
 function Faction:HideArea(location, range) end
 
 ---Check if a tile or area is currently visible to this faction.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#faction-isvisible)
----@param location Area|Point|Entity Location to check
+---@param location Location
 ---@param require_all boolean? If true and area specifies multiple tiles, require all tiles to be visible (OPTIONAL, default false)
 ---@returns boolean # Result of check
 function Faction:IsVisible(location, require_all) return false end
 
 ---Check if a tile or area has been revealed by this faction.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#faction-isdiscovered)
----@param location Area|Point|Entity Location to check
+---@param location Location
 ---@param require_all boolean? If true and area specifies multiple tiles, require all tiles to be visible (OPTIONAL, default false)
 ---@returns boolean # Result of check
 function Faction:IsDiscovered(location, require_all) return false end
@@ -202,7 +202,7 @@ function Faction:RunUI(callback, params) end
 
 ---Order movable entities to move away from a given area.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#faction-orderentitiestomoveaway)
----@param location Area|Point|Entity Location or area
+---@param location Location
 ---@param entity Entity? An entity that will be excepted from the order (OPTIONAL)
 ---@returns integer # The total number of blocking entities currently in the area (of any faction, excludes the excepted entity)
 function Faction:OrderEntitiesToMoveAway(location, entity) return 0 end

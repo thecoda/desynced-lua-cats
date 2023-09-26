@@ -1,7 +1,7 @@
 ---@meta Frame
 
 ---@class Frame
----@field name string
+---@field name string?
 ---@field visibility_range integer?
 ---@field visual visualId?
 ---@field slots table<SlotType, integer>?

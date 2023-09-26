@@ -432,7 +432,7 @@ function Entity:MoveTo(x, y) end
 ---Start moving the entity somewhere outside of a given area.
 --- This will do nothing if the entity is already outside the area.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-moveaway)
----@param location Area|Point|Entity Location or area to move away from
+---@param location Location Location or area to move away from
 function Entity:MoveAway(location) end
 
 ---Stop movement and abort what is currently controlling the entities movement.
@@ -443,31 +443,31 @@ function Entity:Cancel() end
 
 ---Rotate the entity to look towards a given location.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-lookat)
----@param location Area|Point|Entity Location
+---@param location Location Location
 function Entity:LookAt(location) end
 
 ---Check if the entity is touching another entity or a location.
 ---[Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-istouching)
----@param location Area|Point|Entity Location
+---@param location Location Location
 ---@returns boolean # True if located next to other entity/location
 function Entity:IsTouching(location) return false end
 
 ---Check if the entity is in range of another entity or a location.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-isinrangeof)
----@param location Area|Point|Entity Location
+---@param location Location Location
 ---@param range integer Range to test (if 1 will act like IsTouching)
 ---@returns boolean # True if in range of other entity/location
 function Entity:IsInRangeOf(location, range) return false end
 
 ---Measure the range in tiles to another entity or a location.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-getrangeto)
----@param location Area|Point|Entity Location
+---@param location Location Location
 ---@returns integer # Distance in number of tiles
 function Entity:GetRangeTo(location) return 0 end
 
 ---Get the squared distance to another entity or a location.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-getrangesquaredto)
----@param location Area|Point|Entity Location
+---@param location Location Location
 ---@returns integer # Squared distance
 function Entity:GetRangeSquaredTo(location) return 0 end
 
