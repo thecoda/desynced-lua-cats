@@ -70,7 +70,7 @@ function Map.GetExecutedActionCount() return 0 end
 ---@param frame_id frameId Frame id
 ---@param visual_id visualId? Specific visual id or another frame id from which to use the visual (OPTIONAL, defaults to frame visual)
 ---@param is_map_gen boolean? Pass true for entities spawned as part of map generation (OPTIONAL)
----@returns Entity|nil # Entity object (or nil on error)
+---@returns Entity? # Entity object (or nil on error)
 function Map.CreateEntity(faction, frame_id, visual_id, is_map_gen) return Entity end
 
 ---Drop an item at a specific location.
@@ -139,8 +139,8 @@ function Map.GetSunriseAndSunset(threshold_time) return 0 end
 --- The returned tile position is at the center of the unspawned 60x60 chunk
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#map-getundiscoveredlocation)
 ---@param nth_chunk integer? Request the Nth undiscovered chunk (OPTIONAL, default first)
----@returns integer # Y position
-function Map.GetUndiscoveredLocation(nth_chunk) return 0 end
+---@returns integer, integer # Y position
+function Map.GetUndiscoveredLocation(nth_chunk) return 0, 0 end
 
 ---Make sure chunks exist at the given location.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#map-spawnchunks)
@@ -233,14 +233,14 @@ function Map.StopTerraforming(terraforming_instance) end
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#map-getentityat)
 ---@param x integer X coordinate
 ---@param y integer Y coordinate
----@returns Entity|nil # Entity (or nil if none)
+---@returns Entity? # Entity (or nil if none)
 function Map.GetEntityAt(x, y) return Entity end
 
 ---Get a foundation entity at a specific location.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#map-getfoundationentityat)
 ---@param x integer X coordinate
 ---@param y integer Y coordinate
----@returns Entity|nil # Entity (or nil if none)
+---@returns Entity? # Entity (or nil if none)
 function Map.GetFoundationEntityAt(x, y) return Entity end
 
 ---Get all entities at a specific location.
@@ -270,6 +270,6 @@ function Map.FindClosestEntity(x, y, search_radius, frame_type, callback) return
 ---@param source_entity Entity Source entity
 ---@param target_entity Entity Target entity
 ---@param item_id itemId Item id
----@param entity_instance_number integer|nil Entity instance number (OPTIONAL)
+---@param entity_instance_number integer? Entity instance number (OPTIONAL)
 function Map.ThrowItemEffect(source_entity, target_entity, item_id, entity_instance_number) end
 

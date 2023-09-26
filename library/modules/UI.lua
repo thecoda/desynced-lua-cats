@@ -125,9 +125,9 @@ function UI.IsUIHidden() return false end
 ---Query the UI coordinate of an entity in the game camera view.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#ui-entitylocationonscreen)
 ---@param p1 Entity Input entity
----@param p2 boolean|nil Only return success if the position is on screen (or less than 100 points away from the screen border) (OPTIONAL, default false)
----@returns integer # Screen position Y.
-function UI.EntityLocationOnScreen(p1, p2) return 0 end
+---@param p2 boolean? Only return success if the position is on screen (or less than 100 points away from the screen border) (OPTIONAL, default false)
+---@returns integer, integer # Screen position X,Y.
+function UI.EntityLocationOnScreen(p1, p2) return 0,0 end
 
 ---Run code in UI context or call bound UIMsg functions.
 --- When called from simulation context the function will execute for all connected players (to limit to specific players use `faction:RunUI` or `Action.RunUI`)

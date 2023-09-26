@@ -41,7 +41,7 @@ function Game.GetModPackages() return {} end
 
 ---Get the mod package of the currently running scenario.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getscenariomodpackage)
----@returns ModPackage|nil # Module package (or nil on error)
+---@returns ModPackage? # Module package (or nil on error)
 function Game.GetScenarioModPackage() return ModPackage end
 
 ---Get meta data of all installed mods.
@@ -317,7 +317,7 @@ function Game.IsLocalPlayer(player_id) return false end
 ---Kick a player from the server (only available to the host of a locally running session).
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-kickplayer)
 ---@param player_id integer Player id
----@param ban_until_restart boolean|nil True to ban the player until the game on the server is restarted (OPTIONAL, default false)
+---@param ban_until_restart boolean? True to ban the player until the game on the server is restarted (OPTIONAL, default false)
 function Game.KickPlayer(player_id, ban_until_restart) end
 
 ---Get the number of connected players.
@@ -359,13 +359,13 @@ function Game.SetFullscreenMode(p1) end
 
 ---Get active screen resolution.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getscreenresolution)
----@returns { [1]: integer, [2]: integer }
-function Game.GetScreenResolution() return {0,0} end
+---@returns integer, integer 
+function Game.GetScreenResolution() return 0,0 end
 
 ---Set screen resolution.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-setscreenresolution)
----@returns { [1]: integer, [2]: integer }
-function Game.SetScreenResolution() return {0,0} end
+---@returns integer, integer 
+function Game.SetScreenResolution() return 0,0 end
 
 ---Get a list screen resolutions appropriate for the current fullscreen mode.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getscreenresolutions)

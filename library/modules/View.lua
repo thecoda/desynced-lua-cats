@@ -5,12 +5,12 @@ View = {}
 
 ---Get the location of the currently hovered tile.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#view-gethoveredtileposition)
----@returns integer # Y factor of the virtual cursor
-function View.GetHoveredTilePosition() return 0 end
+---@returns integer, integer # X,Y factor of the virtual cursor
+function View.GetHoveredTilePosition() return 0,0 end
 
 ---Get the entity currently hovered.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#view-gethoveredentity)
----@returns Entity|nil # Hovered entity (or nil if none)
+---@returns Entity? # Hovered entity (or nil if none)
 function View.GetHoveredEntity() return Entity end
 
 ---Reset the camera to the faction home location.
@@ -47,7 +47,7 @@ function View.FollowEntity(entity) end
 
 ---Get the entity currently followed by the camera.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#view-getfollowentity)
----@returns Entity|nil # Followed entity (or nil if there is none)
+---@returns Entity? # Followed entity (or nil if there is none)
 function View.GetFollowEntity() return Entity end
 
 ---Show movement paths of selected entities.
@@ -62,7 +62,7 @@ function View.ShowEntityStores(state) end
 
 ---Get the currently selected entities.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#view-getselectedentities)
----@returns Entity[]|nil # List of selected entities (or nil if empty)
+---@returns Entity[]? # List of selected entities (or nil if empty)
 function View.GetSelectedEntities() return {} end
 
 ---Get the currently selected entity (will be just the first if multiple are selected).
@@ -77,7 +77,7 @@ function View.IsSelectedEntity() return Entity end
 
 ---Set the selected entity(s).
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#view-selectentities)
----@param entities Entity[]|nil List of entities to select
+---@param entities Entity[]? List of entities to select
 function View.SelectEntities(entities) end
 
 ---Set the selected entity(s).
@@ -99,7 +99,7 @@ function View.StartCursorChooseLocation(confirm_func, callback) end
 ---Switch to a cursor mode to select an entity on the map.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#view-startcursorchooseentity)
 ---@param confirm_func function LUA function called when confirming an entity with the entity as the argument
----@param callback function|nil LUA function called when aborting the cursor mode (OPTIONAL)
+---@param callback function? LUA function called when aborting the cursor mode (OPTIONAL)
 function View.StartCursorChooseEntity(confirm_func, callback) end
 
 ---Show entity construction location selection on map.
@@ -183,8 +183,8 @@ function View.GetVisibleEntities(only_injured) return {} end
 
 ---Set the full 3D camera position and target location directly.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#view-setcamera3dposition)
----@param camera_pos table|nil A table with x, y and z camera position (or nil if only setting the target location)
----@param look_at_pos table|nil A table with x, y and z target location (or nil if only setting the camera position)
+---@param camera_pos table? A table with x, y and z camera position (or nil if only setting the target location)
+---@param look_at_pos table? A table with x, y and z target location (or nil if only setting the camera position)
 function View.SetCamera3DPosition(camera_pos, look_at_pos) end
 
 ---Get the 3D camera position and target location.

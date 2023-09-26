@@ -72,8 +72,8 @@ function Widget:SendEvent(prop_name, params) return 0 end
 
 ---Get the desired size of a widget.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#widget-getdesiredsize)
----@returns integer # Height
-function Widget:GetDesiredSize() return 0 end
+---@returns integer, integer
+function Widget:GetDesiredSize() return 0, 0 end
 
 ---Set the position of a widget placed a canvas panel widget.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#widget-setposition)
@@ -86,8 +86,8 @@ function Widget:SetPosition(x, y, z_order) end
 --- If a widget gets passed that hasn't had its layout calculated yet, the function will return nil
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#widget-getviewportposition)
 ---@param relative_to Widget? Widget to get relative position to (OPTIONAL)
----@returns integer # Y position
-function Widget:GetViewportPosition(relative_to) return 0 end
+---@returns integer, integer
+function Widget:GetViewportPosition(relative_to) return 0, 0 end
 
 ---Set this widget (and any children) to not interact with the mouse cursor (clicking or dragging over).
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#widget-setignorehittest)

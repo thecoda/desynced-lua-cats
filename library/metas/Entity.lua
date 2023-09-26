@@ -137,7 +137,7 @@ function Entity:SwapSockets(socket_index_1, socket_index_2) return false end
 
 ---Get an existing hidden component.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-gethiddencomponent)
----@param component_number integer|nil Hidden component number (starts at 1) (OPTIONAL, default 1)
+---@param component_number integer? Hidden component number (starts at 1) (OPTIONAL, default 1)
 ---@returns Component? # Component object or nil if not exist
 function Entity:GetHiddenComponent(component_number) return Component end
 
@@ -176,7 +176,7 @@ function Entity:GetRegister(register) return Register end
 
 ---Get a list of links on the entity.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-getregisterlinks)
----@param also_cross_entity boolean|nil Also return cross-entity links (OPTIONAL, default false)
+---@param also_cross_entity boolean? Also return cross-entity links (OPTIONAL, default false)
 ---@returns table # Array of links
 function Entity:GetRegisterLinks(also_cross_entity) return {} end
 
@@ -234,21 +234,21 @@ function Entity:SetRegisterNum(register, number_value) end
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-setregisterid)
 ---@param register Register|integer Register reference
 ---@param id_value itemId Id value
----@param number_value integer|nil Number value (OPTIONAL)
+---@param number_value integer? Number value (OPTIONAL)
 function Entity:SetRegisterId(register, id_value, number_value) end
 
 ---Set the entity part of a register of this entity (will overwrite the id/coordinate part).
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-setregisterentity)
 ---@param register Register|integer Register reference
 ---@param entity Entity Entity value
----@param number_value integer|nil Number value (OPTIONAL)
+---@param number_value integer? Number value (OPTIONAL)
 function Entity:SetRegisterEntity(register, entity, number_value) end
 
 ---Set the coordinate part of a register of this entity (will overwrite the id/entity part).
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-setregistercoord)
 ---@param register Register|integer Register reference
 ---@param point Point Coordinate value
----@param number_value integer|nil Number value (OPTIONAL)
+---@param number_value integer? Number value (OPTIONAL)
 function Entity:SetRegisterCoord(register, point, number_value) end
 
 ---Flag the error state on a register of this entity.
@@ -304,7 +304,7 @@ function Entity:UnlinkRegisterFromRegister(target_register, source_register, sou
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-getregisterlinksource)
 ---@param register Register|integer Target register reference
 ---@param register_holder Entity|Component Entity that holds the source register
----@returns Component|nil # Component that holds the source register or nil if frame register (unless entity/component specified)
+---@returns Component? # Component that holds the source register or nil if frame register (unless entity/component specified)
 ---@overload fun(register: Register|integer): Component?
 function Entity:GetRegisterLinkSource(register, register_holder) return Component end
 
@@ -340,7 +340,7 @@ function Entity:HaveFreeSpace(item_id, count) return false end
 ---Count how much free space for an item in any item slots.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-countfreespace)
 ---@param item_id itemId Item id
----@returns integer|nil # Number of availabe Space (or nil if item id is nil)
+---@returns integer? # Number of availabe Space (or nil if item id is nil)
 function Entity:CountFreeSpace(item_id) return 0 end
 
 ---Find an item slot with enough free space to store a given amount.
@@ -388,7 +388,7 @@ function Entity:IsWaitingForOrder(item_id) return false end
 ---@param item_id itemId Item id
 ---@param amount integer Amount
 ---@param show_throw_effect boolean? Show the visual item throw effect (OPTIONAL, default false)
----@returns integer|nil # Amount actually transferred (can be 0 if there is no free space) (or nil on error)
+---@returns integer? # Amount actually transferred (can be 0 if there is no free space) (or nil on error)
 function Entity:TransferFrom(entity, item_id, amount, show_throw_effect) return 0 end
 
 ---Drop an item to the ground.

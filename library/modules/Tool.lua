@@ -64,7 +64,7 @@ function Tool.NewRegisterObject(source_table) return Register end
 
 ---Create an empty register object.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#tool-newregisterobject)
----@param source_register Register|nil Copy contents from another register (OPTIONAL)
+---@param source_register Register? Copy contents from another register (OPTIONAL)
 ---@returns Register # New register object
 function Tool.NewRegisterObject(source_register) return Register end
 

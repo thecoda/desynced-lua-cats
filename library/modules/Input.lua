@@ -56,7 +56,7 @@ function Input.BindAxis(axis_name, callback_name) end
 ---Remove bound callback functions from a named input action.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#input-removeactionbinding)
 ---@param action_name string Action name
----@param action_handle integer|nil Action handle (OPTIONAL, return value of BindAction, clear all if not passed)
+---@param action_handle integer? Action handle (OPTIONAL, return value of BindAction, clear all if not passed)
 function Input.RemoveActionBinding(action_name, action_handle) end
 
 ---Remove all bound callback functions from a named input axis.

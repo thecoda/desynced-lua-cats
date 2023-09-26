@@ -27,7 +27,7 @@ function Twitch.IsLoggedIn() return false end
 ---If the user data has already been requested before the callback will be called immediately.
 ---
 ---[Official Documentation](https://modding.desyncedgame.com/syntax.html#twitch-getuserdata)
----@param p1 function|nil Callback which will get called with user_id and display_name or nil on error
+---@param p1 function? Callback which will get called with user_id and display_name or nil on error
 function Twitch.GetUserData(p1) end
 
 ---Request the list of custom rewards
@@ -57,7 +57,7 @@ function Twitch.StopRewards() end
 ---When a message is posted, `UIMsg.TwitchOnChatMessage(username, message)` will get called
 ---
 ---[Official Documentation](https://modding.desyncedgame.com/syntax.html#twitch-startchat)
----@param p1 string|nil Channel name to join, can be omitted if logged in (OPTIONAL)
+---@param p1 string? Channel name to join, can be omitted if logged in (OPTIONAL)
 function Twitch.StartChat(p1) end
 
 ---Stop listening for chat messages

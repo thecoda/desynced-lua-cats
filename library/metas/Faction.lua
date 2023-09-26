@@ -100,7 +100,7 @@ function Faction:GetItemAmount(item_id) return 0 end
 ---Get a table of all entities that hold a specific item.
 ---[Official Documentation](https://modding.desyncedgame.com/syntax.html#faction-getitemavailability)
 ---@param p1 string item id
----@returns table|nil # Item availability table (key is entity, value is amount held) or nil if not available
+---@returns table<Entity, any>? # Item availability table (key is entity, value is amount held) or nil if not available
 function Faction:GetItemAvailability(p1) return {} end
 
 ---Get the total amount of generated (mined/produced) and consumed (as ingredients) for an item.
