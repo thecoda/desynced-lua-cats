@@ -43,5 +43,5 @@ function Frame:can_interact(entity) end
 
 ---@param id frameId
 ---@param frame_def Frame
----@returns Frame
+---@return Frame
 function Frame:RegisterFrame(id, frame_def) return {} end

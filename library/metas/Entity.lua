@@ -96,7 +96,7 @@ Entity = {}
 ---@param location Point Location
 ---@param rotation Rotation? Rotation (0 to 3) (OPTIONAL)
 ---@param nearby_if_blocked boolean? Place nearby if blocking (OPTIONAL, default true)
----@returns boolean? # Returns boolean false if failed to place, otherwise nil
+---@return boolean? # Returns boolean false if failed to place, otherwise nil
 ---@overload fun(x: integer, y: integer, rotation: Rotation?, nearby_if_blocked: boolean?): boolean?
 function Entity:Place(location, rotation, nearby_if_blocked) return false end
 
@@ -117,14 +117,14 @@ function Entity:Destroy(drop_inventory, extra_drops, drop_target) end
 ---@param component_id componentId Component id
 ---@param add_mode AddMode? Add mode ("auto" will find a suitable socket, "hidden" will add the component hidden) (OPTIONAL, default "auto")
 ---@param extra_data table? Extra data table (OPTIONAL, default nil)
----@returns Component? # Component object (or nil on error)
+---@return Component? # Component object (or nil on error)
 ---@overload fun(component_id: componentId, socket_index: integer, extra_data: table?): Component?
 function Entity:AddComponent(component_id, add_mode, extra_data) return Component end
 
 ---Get an existing component at a specific socket index
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-getcomponent)
 ---@param socket_index integer Socket index (starts at 1)
----@returns Component? # Component object or nil if not exist
+---@return Component? # Component object or nil if not exist
 function Entity:GetComponent(socket_index) return Component end
 
 ---Swap the content of two sockets
@@ -132,19 +132,19 @@ function Entity:GetComponent(socket_index) return Component end
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-swapsockets)
 ---@param socket_index_1 integer First socket index
 ---@param socket_index_2 integer Second socket index
----@returns boolean # If it was successful
+---@return boolean # If it was successful
 function Entity:SwapSockets(socket_index_1, socket_index_2) return false end
 
 ---Get an existing hidden component.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-gethiddencomponent)
 ---@param component_number integer? Hidden component number (starts at 1) (OPTIONAL, default 1)
----@returns Component? # Component object or nil if not exist
+---@return Component? # Component object or nil if not exist
 function Entity:GetHiddenComponent(component_number) return Component end
 
 ---Count the components of the same type on an entity.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-countcomponents)
 ---@param component_id componentId Component id
----@returns integer # number of the components
+---@return integer # number of the components
 function Entity:CountComponents(component_id) return 0 end
 
 ---Find an existing component.
@@ -152,69 +152,69 @@ function Entity:CountComponents(component_id) return 0 end
 ---@param component_id componentId Component id
 ---@param query_base boolean? Set to true to query the base_id value of component definitions if it exists (OPTIONAL, default false)
 ---@param component_number integer? Component number (if there are multiples of the same component) (OPTIONAL, default 1)
----@returns Component? # Component object or nil if not found
+---@return Component? # Component object or nil if not found
 function Entity:FindComponent(component_id, query_base, component_number) return Component end
 
 ---Check if a free socket of large enough size is available to equip a component.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-getfreesocket)
 ---@param component_id componentId Component id
----@returns integer? # Socket index it can be equipped into or nil if not possible (or if passed id is not a component)
+---@return integer? # Socket index it can be equipped into or nil if not possible (or if passed id is not a component)
 function Entity:GetFreeSocket(component_id) return 0 end
 
 ---Test if a component fits into a socket (regardless if there is already something equipped in the socket).
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-checksocketsize)
 ---@param component_id componentId Component id
 ---@param socket_index integer Socket index to test the component against (starts at 1)
----@returns boolean # True if the socket is large enough to hold the component
+---@return boolean # True if the socket is large enough to hold the component
 function Entity:CheckSocketSize(component_id, socket_index) return false end
 
 ---Get a register of this entity.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-getregister)
 ---@param register Register|integer Register reference
----@returns Register # Register object
+---@return Register # Register object
 function Entity:GetRegister(register) return Register end
 
 ---Get a list of links on the entity.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-getregisterlinks)
 ---@param also_cross_entity boolean? Also return cross-entity links (OPTIONAL, default false)
----@returns table # Array of links
+---@return table # Array of links
 function Entity:GetRegisterLinks(also_cross_entity) return {} end
 
 ---Get the number part of a register of this entity.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-getregisternum)
 ---@param register Register|integer Register reference
----@returns integer # Number value
+---@return integer # Number value
 function Entity:GetRegisterNum(register) return 0 end
 
 ---Get the id part of a register of this entity.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-getregisterid)
 ---@param register Register|integer Register reference
----@returns string # Id value
+---@return string # Id value
 function Entity:GetRegisterId(register) return "" end
 
 ---Get the definition table of the id stored in a register of this entity.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-getregisterdef)
 ---@param register Register|integer Register reference
----@returns table # Definition table
+---@return table # Definition table
 function Entity:GetRegisterDef(register) return {} end
 
 ---Get the entity part of a register of this entity.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-getregisterentity)
 ---@param register Register|integer Register reference
----@returns Entity # Entity value
+---@return Entity # Entity value
 function Entity:GetRegisterEntity(register) return Entity end
 
 ---Get the coordinate part of a register of this entity.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-getregistercoord)
 ---@param register Register|integer Register reference
----@returns Point # Coordinate value
+---@return Point # Coordinate value
 function Entity:GetRegisterCoord(register) return Point end
 
 ---Compare two registers of this entity.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-registersequal)
 ---@param first_register Register|integer First register reference
 ---@param second_register Register|integer Second register reference
----@returns boolean # Comparison result
+---@return boolean # Comparison result
 function Entity:RegistersEqual(first_register, second_register) return false end
 
 ---Set a register of this entity.
@@ -261,19 +261,19 @@ function Entity:FlagRegisterError(register, set_error_state) end
 ---Check if a register of this entity is linked from another register.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-registerislink)
 ---@param register Register|integer Register reference
----@returns boolean # link state
+---@return boolean # link state
 function Entity:RegisterIsLink(register) return false end
 
 ---Check if a register of this entity is empty
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-registerisempty)
 ---@param register Register|integer Register reference
----@returns boolean # Empty
+---@return boolean # Empty
 function Entity:RegisterIsEmpty(register) return false end
 
 ---Check if a register of this entity is in error state.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-registeriserror)
 ---@param register Register|integer Register reference
----@returns boolean # Error
+---@return boolean # Error
 function Entity:RegisterIsError(register) return false end
 
 ---Check if two registers have a connection via link(s).
@@ -281,7 +281,7 @@ function Entity:RegisterIsError(register) return false end
 ---@param register_one Register|integer Register one
 ---@param register_two Register|integer Register two
 ---@param register_two_holder Entity|Component|nil Different entity that holds the second register (OPTIONAL)
----@returns boolean # Check result
+---@return boolean # Check result
 function Entity:RegisterHasConnection(register_one, register_two, register_two_holder) return false end
 
 ---Link a register from another register.
@@ -304,7 +304,7 @@ function Entity:UnlinkRegisterFromRegister(target_register, source_register, sou
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-getregisterlinksource)
 ---@param register Register|integer Target register reference
 ---@param register_holder Entity|Component Entity that holds the source register
----@returns Component? # Component that holds the source register or nil if frame register (unless entity/component specified)
+---@return Component? # Component that holds the source register or nil if frame register (unless entity/component specified)
 ---@overload fun(register: Register|integer): Component?
 function Entity:GetRegisterLinkSource(register, register_holder) return Component end
 
@@ -312,7 +312,7 @@ function Entity:GetRegisterLinkSource(register, register_holder) return Componen
 ---[Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-getregisterlinktarget)
 ---@param register Register|integer Source register reference
 ---@param register_holder Entity|Component|nil Different entity that holds the source register (OPTIONAL)
----@returns integer? Target register index, absolute entity index (or nil if not exist)
+---@return integer? Target register index, absolute entity index (or nil if not exist)
 function Entity:GetRegisterLinkTarget(register, register_holder) return 0 end
 
 ---Add an item to the inventory.
@@ -320,66 +320,66 @@ function Entity:GetRegisterLinkTarget(register, register_holder) return 0 end
 ---@param item_id itemId Item id
 ---@param amount integer? Amount (OPTIONAL, default 1)
 ---@param extra_data table? Extra data table (OPTIONAL, default nil)
----@returns ItemSlot? # Item slot object into which the item has been added (or nil on error)
+---@return ItemSlot? # Item slot object into which the item has been added (or nil on error)
 function Entity:AddItem(item_id, amount, extra_data) return ItemSlot end
 
 ---Count (unreserved) stacks of an item across all item slots.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-countitem)
 ---@param item_id itemId Item id
 ---@param only_unreserved boolean? Count unreserved, if true it will only count unreserved stack amounts (OPTIONAL, default false)
----@returns integer # Item count
+---@return integer # Item count
 function Entity:CountItem(item_id, only_unreserved) return 0 end
 
 ---Check if there is any free space to add the item in any item slots.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-havefreespace)
 ---@param item_id itemId Item id
 ---@param count integer? Count of item (OPTIONAL, default 1)
----@returns boolean # Can items be added
+---@return boolean # Can items be added
 function Entity:HaveFreeSpace(item_id, count) return false end
 
 ---Count how much free space for an item in any item slots.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-countfreespace)
 ---@param item_id itemId Item id
----@returns integer? # Number of availabe Space (or nil if item id is nil)
+---@return integer? # Number of availabe Space (or nil if item id is nil)
 function Entity:CountFreeSpace(item_id) return 0 end
 
 ---Find an item slot with enough free space to store a given amount.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-getfreeslot)
 ---@param item_id itemId Item id
 ---@param amount integer? Amount to search (OPTIONAL, default max stack size)
----@returns ItemSlot? # Item slot object with the space available (or nil on error)
+---@return ItemSlot? # Item slot object with the space available (or nil on error)
 function Entity:GetFreeSlot(item_id, amount) return ItemSlot end
 
 ---Get a single item slot at a specific slot index.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-getslot)
 ---@param slot_index integer Slot index (starts at 1)
----@returns ItemSlot? # Item slot object or nil if not exist
+---@return ItemSlot? # Item slot object or nil if not exist
 function Entity:GetSlot(slot_index) return ItemSlot end
 
 ---Find an item slot with a specific item.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-findslot)
 ---@param item_id itemId Item id
 ---@param limit_to_slot integer? Limit search to slot with at least this amount of unreserved stack in it (OPTIONAL)
----@returns ItemSlot? # Item slot object or nil if not found
+---@return ItemSlot? # Item slot object or nil if not found
 function Entity:FindSlot(item_id, limit_to_slot) return ItemSlot end
 
 ---Add inventory slots.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-addslots)
 ---@param slot_type string Slot type
 ---@param number_of_slots integer? Number of slots to add (OPTIONAL, default 1)
----@returns ItemSlot? # Component object (or nil on error)
+---@return ItemSlot? # Component object (or nil on error)
 function Entity:AddSlots(slot_type, number_of_slots) return ItemSlot end
 
 ---Automatically merge stacks of the same item across the inventory.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-automergeslots)
 ---@param limit_to itemId Limit merging to just one this one item id (OPTIONAL)
----@returns integer # Number of inventory slots that became empty due to the merge
+---@return integer # Number of inventory slots that became empty due to the merge
 function Entity:AutoMergeSlots(limit_to) return 0 end
 
 ---Check if the entity is waiting for an order of a specific item.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-iswaitingfororder)
 ---@param item_id itemId Item id
----@returns boolean # Has item on order
+---@return boolean # Has item on order
 function Entity:IsWaitingForOrder(item_id) return false end
 
 ---Transfer an item from the inventory of another entity.
@@ -388,7 +388,7 @@ function Entity:IsWaitingForOrder(item_id) return false end
 ---@param item_id itemId Item id
 ---@param amount integer Amount
 ---@param show_throw_effect boolean? Show the visual item throw effect (OPTIONAL, default false)
----@returns integer? # Amount actually transferred (can be 0 if there is no free space) (or nil on error)
+---@return integer? # Amount actually transferred (can be 0 if there is no free space) (or nil on error)
 function Entity:TransferFrom(entity, item_id, amount, show_throw_effect) return 0 end
 
 ---Drop an item to the ground.
@@ -419,7 +419,7 @@ function Entity:DropComponent(component, x, y) end
 ---@param item_slot ItemSlot? Order items into this slot (OPTIONAL)
 ---@param item_id itemId Item id to be ordered
 ---@param amount integer Amount to be ordered
----@returns integer # Order ID created or modified
+---@return integer # Order ID created or modified
 function Entity:OrderItem(item_slot, item_id, amount) return 0 end
 
 ---Start moving the entity to a given location.
@@ -449,38 +449,38 @@ function Entity:LookAt(location) end
 ---Check if the entity is touching another entity or a location.
 ---[Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-istouching)
 ---@param location Location Location
----@returns boolean # True if located next to other entity/location
+---@return boolean # True if located next to other entity/location
 function Entity:IsTouching(location) return false end
 
 ---Check if the entity is in range of another entity or a location.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-isinrangeof)
 ---@param location Location Location
 ---@param range integer Range to test (if 1 will act like IsTouching)
----@returns boolean # True if in range of other entity/location
+---@return boolean # True if in range of other entity/location
 function Entity:IsInRangeOf(location, range) return false end
 
 ---Measure the range in tiles to another entity or a location.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-getrangeto)
 ---@param location Location Location
----@returns integer # Distance in number of tiles
+---@return integer # Distance in number of tiles
 function Entity:GetRangeTo(location) return 0 end
 
 ---Get the squared distance to another entity or a location.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-getrangesquaredto)
 ---@param location Location Location
----@returns integer # Squared distance
+---@return integer # Squared distance
 function Entity:GetRangeSquaredTo(location) return 0 end
 
 ---Dock this entity into an item slot of another entity.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-dockinto)
 ---@param garage Entity Garage entity to dock into
----@returns boolean? # True if docking succeeded, false if garage was full (or nil on error)
+---@return boolean? # True if docking succeeded, false if garage was full (or nil on error)
 function Entity:DockInto(garage) return false end
 
 ---Undock this entity.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-undock)
 ---@param reserve_for_return boolean? If true, reserve the item slot for this entity to come back later (OPTIONAL, default true)
----@returns boolean? # True if undocking succeeded (or nil on error)
+---@return boolean? # True if undocking succeeded (or nil on error)
 function Entity:Undock(reserve_for_return) return false end
 
 ---removes an instance from the entity.
@@ -494,7 +494,7 @@ function Entity:RemoveEntityInstance() end
 ---@param socket_name string? Socket name (OPTIONAL)
 ---@param target_entity Entity? Target entity (OPTIONAL)
 ---@param entity_instance integer? Entity instance number (OPTIONAL)
----@returns integer # Effect instance (only for looping effects, can be used with `entity:StopEffect`)
+---@return integer # Effect instance (only for looping effects, can be used with `entity:StopEffect`)
 ---@overload fun(effect_id: effectId, entity_instance: integer?): integer
 function Entity:PlayEffect(effect_id, socket_name, target_entity, entity_instance) return 0 end
 
@@ -526,14 +526,14 @@ function Entity:GetSizeAtRotation(visual_id, rotation) end
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-setvisual)
 ---@param visual_id visualId Visual id
 ---@param rotation Rotation Rotation (0 to 3)
----@returns boolean # Result
+---@return boolean # Result
 function Entity:SetVisual(visual_id, rotation) return false end
 
 ---Add health (cannot exceed max_health).
 --- This does nothing if the entity is at 0 health (because it is in the process of being destroyed)
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-addhealth)
 ---@param add_amount integer Add amount
----@returns integer # New health amount on entity
+---@return integer # New health amount on entity
 function Entity:AddHealth(add_amount) return 0 end
 
 ---Remove health while handling any damage reduction by shield components.
@@ -541,6 +541,6 @@ function Entity:AddHealth(add_amount) return 0 end
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#entity-removehealth)
 ---@param remove_amount integer Remove amount
 ---@param causing_entity Entity? Which entity caused the damage (OPTIONAL)
----@returns integer # New health amount on entity (0 if destroyed)
+---@return integer # New health amount on entity (0 if destroyed)
 function Entity:RemoveHealth(remove_amount, causing_entity) return 0 end
 

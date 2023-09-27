@@ -76,19 +76,19 @@ function Action.SetPlayerReady(value) end
 
 ---Returns if a replay is being played back.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#action-isreplayplayback)
----@returns boolean # Replay state
+---@return boolean # Replay state
 function Action.IsReplayPlayback() return false end
 
 ---Returns the playback progress of the replay.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#action-getreplayprogress)
 ---@param days_not_ticks boolean? Return the time in in-game days instead of ticks (OPTIONAL, default false)
----@returns integer # Ticks or days since replay start
+---@return integer # Ticks or days since replay start
 function Action.GetReplayProgress(days_not_ticks) return 0 end
 
 ---Returns the total duration of the replay.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#action-getreplayduration)
 ---@param days_not_ticks boolean? Return the time in in-game days instead of ticks (OPTIONAL, default false)
----@returns integer # Duration in ticks or days
+---@return integer # Duration in ticks or days
 function Action.GetReplayDuration(days_not_ticks) return 0 end
 
 ---Set replay playback speed.

@@ -14,21 +14,21 @@ function UI.Register(tag_name, markup, class_table, overwrite) end
 ---Check if a layout tag has been registered.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#ui-isregistered)
 ---@param tag_name string Layout tag name
----@returns boolean # True if known layout tag
+---@return boolean # True if known layout tag
 function UI.IsRegistered(tag_name) return false end
 
 ---Instantiate a new widgets.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#ui-new)
 ---@param markup string Layout Text
 ---@param properties table? Property table (OPTIONAL)
----@returns Widget? # Created widget (or nil on error)
+---@return Widget? # Created widget (or nil on error)
 function UI.New(markup, properties) return Widget end
 
 ---Add widget to screen canvas.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#ui-addlayout)
 ---@param widget Widget Widget
 ---@param ordering_priority integer? Ordering priority (OPTIONAL, default 0)
----@returns Widget # The widget passed in the first argument
+---@return Widget # The widget passed in the first argument
 function UI.AddLayout(widget, ordering_priority) return Widget end
 
 ---Add widget to screen canvas.
@@ -36,18 +36,18 @@ function UI.AddLayout(widget, ordering_priority) return Widget end
 ---@param markup string Layout text for creating a new widget inline
 ---@param properties table? Property table for the inline widget (OPTIONAL)
 ---@param ordering_priority integer? Ordering priority (OPTIONAL, default 0)
----@returns Widget # The widget passed in the first argument
+---@return Widget # The widget passed in the first argument
 function UI.AddLayout(markup, properties, ordering_priority) return Widget end
 
 ---Instantiate the options widget of a mod.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#ui-makemodoptionswidget)
 ---@param mod_id string Mod id
----@returns Widget? # Created widget (or nil on error)
+---@return Widget? # Created widget (or nil on error)
 function UI.MakeModOptionsWidget(mod_id) return Widget end
 
 ---Get the size of the screen scaled in UI coordinates.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#ui-getscreensize)
----@returns integer[]
+---@return integer[]
 function UI.GetScreenSize() return 0 end
 
 ---Pop up a context menu or window.
@@ -60,7 +60,7 @@ function UI.GetScreenSize() return 0 end
 ---@param next_to Widget? Pop up next to this widget (OPTIONAL, default pop up at mouse cursor)
 ---@param x_offset integer Attachment X offset
 ---@param y_offset integer Attachment Y offset
----@returns Widget # The widget passed in the first argument or that was created
+---@return Widget # The widget passed in the first argument or that was created
 function UI.MenuPopup(widget, direction, alignment, next_to, x_offset, y_offset) return Widget end
 
 ---Pop up a context menu or window
@@ -74,13 +74,13 @@ function UI.MenuPopup(widget, direction, alignment, next_to, x_offset, y_offset)
 ---@param next_to Widget? Pop up next to this widget (OPTIONAL, default pop up at mouse cursor)
 ---@param x_offset integer Attachment X offset
 ---@param y_offset integer Attachment Y offset
----@returns Widget # The widget passed in the first argument or that was created
+---@return Widget # The widget passed in the first argument or that was created
 function UI.MenuPopup(markup, properties, direction, alignment, next_to, x_offset, y_offset) return Widget end
 
 ---Close the context menu opened with MenuPopup.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#ui-closemenupopup)
 ---@param widget Widget? Close popup containing this widget (OPTIONAL, default close all popups)
----@returns boolean # If a popup was actually closed
+---@return boolean # If a popup was actually closed
 function UI.CloseMenuPopup(widget) return false end
 
 ---Close the current tooltip.
@@ -114,19 +114,19 @@ function UI.StopAmbienceSound() end
 ---Hide the entire UI.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#ui-setuihidden)
 ---@param state boolean? UI hidden state (OPTIONAL, if not set will toggle)
----@returns boolean # UI hidden state
+---@return boolean # UI hidden state
 function UI.SetUIHidden(state) return false end
 
 ---Check if UI has been hidden with SetUIHidden.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#ui-isuihidden)
----@returns boolean # UI hidden state
+---@return boolean # UI hidden state
 function UI.IsUIHidden() return false end
 
 ---Query the UI coordinate of an entity in the game camera view.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#ui-entitylocationonscreen)
 ---@param p1 Entity Input entity
 ---@param p2 boolean? Only return success if the position is on screen (or less than 100 points away from the screen border) (OPTIONAL, default false)
----@returns integer, integer # Screen position X,Y.
+---@return integer, integer # Screen position X,Y.
 function UI.EntityLocationOnScreen(p1, p2) return 0,0 end
 
 ---Run code in UI context or call bound UIMsg functions.
@@ -147,12 +147,12 @@ function UI.Run(msg_name, params) end
 
 ---Get a table of languages.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#ui-getlanguages)
----@returns table # languages (pairs of 'code' = 'name')
+---@return table # languages (pairs of 'code' = 'name')
 function UI.GetLanguages() return {} end
 
 ---Get the current language code.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#ui-getlanguagecode)
----@returns string # language code (for example 'en_us')
+---@return string # language code (for example 'en_us')
 function UI.GetLanguageCode() return "" end
 
 ---Change the active language.
@@ -162,7 +162,7 @@ function UI.SetLanguageCode(language_code) end
 
 ---Get the UI scale factor.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#ui-getscale)
----@returns integer # scale factor (1.0 being 100%)
+---@return integer # scale factor (1.0 being 100%)
 function UI.GetScale() return 0 end
 
 ---Set the UI scale factor.
@@ -174,11 +174,11 @@ function UI.SetScale(p1) end
 --- If a widget gets passed that hasn't had its layout calculated yet, the function will return nil
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#ui-getmouseposition)
 ---@param widget Widget? Widget to get relative position to (OPTIONAL)
----@returns integer # y position of mouse cursor
+---@return integer # y position of mouse cursor
 function UI.GetMousePosition(widget) return 0 end
 
 ---Check if the mouse cursor is over a UI widget.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#ui-ismouseoverui)
----@returns boolean # True if mouse is over UI
+---@return boolean # True if mouse is over UI
 function UI.IsMouseOverUI() return false end
 

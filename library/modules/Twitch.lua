@@ -19,7 +19,7 @@ function Twitch.Logout() end
 ---Check if the user is logged in on Twitch
 ---
 ---[Official Documentation](https://modding.desyncedgame.com/syntax.html#twitch-isloggedin)
----@returns boolean # Login status
+---@return boolean # Login status
 function Twitch.IsLoggedIn() return false end
 
 ---Request user information of the logged in user

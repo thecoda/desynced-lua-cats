@@ -47,7 +47,7 @@ function ItemSlot:RemoveStack(amount) end
 
 ---Clear the content in this slot.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#itemslot-clear)
----@returns table # The extra_data table before the slot was cleared
+---@return table # The extra_data table before the slot was cleared
 function ItemSlot:Clear() return {} end
 
 ---Sets the item and locks an otherwise empty slot.
@@ -64,12 +64,12 @@ function ItemSlot:Swap(item_slot) end
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#itemslot-move)
 ---@param item_slot ItemSlot Target item slot (must be on the same inventory and be empty or have the same item)
 ---@param amount_limit integer? Limit amount to be moved (OPTIONAL, default everything)
----@returns boolean # True if any items or reservations have been moved
+---@return boolean # True if any items or reservations have been moved
 function ItemSlot:Move(item_slot, amount_limit) return false end
 
 ---Gets all the reserve information relative to this slot.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#itemslot-getreserveinfo)
----@returns table # a set of tables of each reserve info related to this slot
+---@return table # a set of tables of each reserve info related to this slot
 function ItemSlot:GetReserveInfo() return {} end
 
 ---Cancel all orders related to this item slot.
@@ -79,6 +79,6 @@ function ItemSlot:CancelOrders() end
 ---The amount of free space actually available to be filled with a specific item (slot can be empty).
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#itemslot-getunreservedspacefor)
 ---@param item_id itemId Item id
----@returns integer # Unreserved free space count
+---@return integer # Unreserved free space count
 function ItemSlot:GetUnreservedSpaceFor(item_id) return 0 end
 

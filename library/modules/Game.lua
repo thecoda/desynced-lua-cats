@@ -31,34 +31,34 @@ function Game.OfflinePause(state) end
 ---Get a loaded mod package.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getmodpackage)
 ---@param mod_package_path string Mod package path ("Mod/Package")
----@returns ModPackage? # Module package (or nil on error)
+---@return ModPackage? # Module package (or nil on error)
 function Game.GetModPackage(mod_package_path) return ModPackage end
 
 ---Get all currently active mod packages.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getmodpackages)
----@returns table # Table of all active mod packages
+---@return table # Table of all active mod packages
 function Game.GetModPackages() return {} end
 
 ---Get the mod package of the currently running scenario.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getscenariomodpackage)
----@returns ModPackage? # Module package (or nil on error)
+---@return ModPackage? # Module package (or nil on error)
 function Game.GetScenarioModPackage() return ModPackage end
 
 ---Get meta data of all installed mods.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getinstalledmods)
----@returns table # Array of tables with mod meta data
+---@return table # Array of tables with mod meta data
 function Game.GetInstalledMods() return {} end
 
 ---Get meta data of all packages from an installed mod.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getinstalledmodpackages)
 ---@param mod_id string Mod id
----@returns table # Array of tables with package meta data
+---@return table # Array of tables with package meta data
 function Game.GetInstalledModPackages(mod_id) return {} end
 
 ---Get meta data of one package and its mod.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getinstalledmodpackage)
 ---@param mod_package_path string Mod package path ("Mod/Package")
----@returns table? # Array of tables with mod meta data (or nil if package doesn't exist)
+---@return table? # Array of tables with mod meta data (or nil if package doesn't exist)
 function Game.GetInstalledModPackage(mod_package_path) return {} end
 
 ---Set a mods enabled state.
@@ -66,7 +66,7 @@ function Game.GetInstalledModPackage(mod_package_path) return {} end
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-setmodenabled)
 ---@param mod_id string Mod id
 ---@param state boolean Mod enable state
----@returns string? # Name of missing dependency if mod could not be enabled (or nil if all dependencies of at least one package are available)
+---@return string? # Name of missing dependency if mod could not be enabled (or nil if all dependencies of at least one package are available)
 function Game.SetModEnabled(mod_id, state) return "" end
 
 ---Refresh the list of installed mods and call mod change callbacks.
@@ -77,7 +77,7 @@ function Game.RefreshInstalledMods() end
 
 ---Get the name of the mod management system of this platform.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getnativemodmanagername)
----@returns string? # System name (or nil if none available)
+---@return string? # System name (or nil if none available)
 function Game.GetNativeModManagerName() return "" end
 
 ---Open the native the mod management system of this platform (if available).
@@ -86,14 +86,14 @@ function Game.OpenNativeModManager() end
 
 ---Get command line arguments.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getcommandlinearguments)
----@returns string # Command line arguments
+---@return string # Command line arguments
 function Game.GetCommandLineArguments() return "" end
 
 ---Save save game.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-savegame)
 ---@param title string Save title
 ---@param slot_name string? Slot name (OPTIONAL, pass nil to save into a new slot)
----@returns string? # Written slot name (or nil if save operation failed)
+---@return string? # Written slot name (or nil if save operation failed)
 function Game.SaveGame(title, slot_name) return "" end
 
 ---Load save game.
@@ -111,19 +111,19 @@ function Game.ReplayGame(slot_name) end
 ---Delete save game.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-deletegame)
 ---@param slot_name string Slot name
----@returns boolean # Result
+---@return boolean # Result
 function Game.DeleteGame(slot_name) return false end
 
 ---Rename save game.
 ---[Official Documentation](https://modding.desyncedgame.com/syntax.html#game-renamegame)
 ---@param slot_name string Slot name
 ---@param new_title string New save title
----@returns string? # Written slot name (or nil if rename operation failed)
+---@return string? # Written slot name (or nil if rename operation failed)
 function Game.RenameGame(slot_name, new_title) return "" end
 
 ---Get the list of all save games.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getsavegamelist)
----@returns table # Save game list table
+---@return table # Save game list table
 function Game.GetSaveGameList() return {} end
 
 ---Get list of mod packages that were in use when the save game was created.
@@ -136,17 +136,17 @@ function Game.GetSaveGameList() return {} end
 --- - now_enabled: Set if the save was made with an addon that has since been enabled
 --- The tables in the resulting array can optionally have error flags 'error_missing' or 'error_version' set.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getsavegamemodpackages)
----@returns table # Array of mod package info tables
+---@return table # Array of mod package info tables
 function Game.GetSaveGameModPackages() return {} end
 
 ---Get if any save game exists.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-haveanysavegame)
----@returns boolean # True if any save game exists
+---@return boolean # True if any save game exists
 function Game.HaveAnySaveGame() return false end
 
 ---Get auto save time setting.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getautosavetime)
----@returns integer # Auto save minutes (or 0 if disabled)
+---@return integer # Auto save minutes (or 0 if disabled)
 function Game.GetAutoSaveTime() return 0 end
 
 ---Set auto save time setting.
@@ -156,7 +156,7 @@ function Game.SetAutoSaveTime(time_in_mins) end
 
 ---Get lock mouse option.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getmouselock)
----@returns boolean # Option
+---@return boolean # Option
 function Game.GetMouseLock() return false end
 
 ---Set lock mouse option.
@@ -166,7 +166,7 @@ function Game.SetMouseLock(state) end
 
 ---Get edge scrolling option.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getedgescrolling)
----@returns boolean # Option
+---@return boolean # Option
 function Game.GetEdgeScrolling() return false end
 
 ---Set edge scrolling option.
@@ -176,7 +176,7 @@ function Game.SetEdgeScrolling(state) end
 
 ---Get scroll speed setting.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getscrollspeed)
----@returns integer # Speed
+---@return integer # Speed
 function Game.GetScrollSpeed() return 0 end
 
 ---Set scroll speed setting.
@@ -186,22 +186,22 @@ function Game.SetScrollSpeed(speed) end
 
 ---Get the play time.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getgameduration)
----@returns integer # Total number of seconds of play time
+---@return integer # Total number of seconds of play time
 function Game.GetGameDuration() return 0 end
 
 ---Get the time that passed since the map was last saved.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-gettimesincesave)
----@returns integer # Seconds since the map was last saved
+---@return integer # Seconds since the map was last saved
 function Game.GetTimeSinceSave() return 0 end
 
 ---Get the game version.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getversionstring)
----@returns string # Game version
+---@return string # Game version
 function Game.GetVersionString() return "" end
 
 ---Get the local player faction.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getlocalplayerfaction)
----@returns Faction|string|nil # Local player faction (or nil if there is none)
+---@return Faction|string|nil # Local player faction (or nil if there is none)
 function Game.GetLocalPlayerFaction() return Faction|string end
 
 ---Get the local player extra data.
@@ -209,7 +209,7 @@ function Game.GetLocalPlayerFaction() return Faction|string end
 --- If called with an empty string or nil, will always return entire parent table
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getlocalplayerextra)
 ---@param mod_id string? Mod id (OPTIONAL)
----@returns table # Local player extra data table
+---@return table # Local player extra data table
 function Game.GetLocalPlayerExtra(mod_id) return {} end
 
 ---Get the local profile table.
@@ -217,7 +217,7 @@ function Game.GetLocalPlayerExtra(mod_id) return {} end
 --- If called with an empty string or nil, will always return entire parent table
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getprofile)
 ---@param mod_id string? Mod id (OPTIONAL)
----@returns table # Profile table
+---@return table # Profile table
 function Game.GetProfile(mod_id) return {} end
 
 ---Change the color mapping mode.
@@ -228,7 +228,7 @@ function Game.SetColorMapping(mode) end
 ---Convert a color according to the color mapping.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getmappedcolor)
 ---@param color RGBA Input color
----@returns RGBA # Mapped color
+---@return RGBA # Mapped color
 function Game.GetMappedColor(color) return RGBA end
 
 ---Create an online session.
@@ -263,12 +263,12 @@ function Game.EndOnlineSession() end
 
 ---Returns if online lobbies are available and sessions can be created with visibility PUBLIC/FRIENDS/INVITE.
 ---[Official Documentation](https://modding.desyncedgame.com/syntax.html#game-onlinehavelobbies)
----@returns boolean # Availability
+---@return boolean # Availability
 function Game.OnlineHaveLobbies() return false end
 
 ---Returns if friend inviting is available.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-caninvitefriend)
----@returns boolean # Availability (true if available on platform and currently in a multiplayer session)
+---@return boolean # Availability (true if available on platform and currently in a multiplayer session)
 function Game.CanInviteFriend() return false end
 
 ---Show the friend invite UI to invite them to the current session.
@@ -277,41 +277,41 @@ function Game.ShowFriendInviteUI() end
 
 ---Get the current network mode.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getnetmode)
----@returns NetMode # Mode string ('offline', 'server' or 'client')
+---@return NetMode # Mode string ('offline', 'server' or 'client')
 function Game.GetNetMode() return "offline" end
 
 ---Get a table of all connected multiplayer players.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getallplayers)
----@returns table # Player list
+---@return table # Player list
 function Game.GetAllPlayers() return {} end
 
 ---Get a connected player by id.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getplayerbyid)
 ---@param player_id integer Player id
----@returns table # Player details
+---@return table # Player details
 function Game.GetPlayerById(player_id) return {} end
 
 ---Get player details of the local player.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getlocalplayer)
----@returns table # Player details
+---@return table # Player details
 function Game.GetLocalPlayer() return {} end
 
 ---Get the name of a connected player.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getplayername)
 ---@param player_id integer? Player id (OPTIONAL, defaults to local player)
----@returns string # Player name
+---@return string # Player name
 function Game.GetPlayerName(player_id) return "" end
 
 ---Check if a given player id belongs to the host player.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-ishostplayer)
 ---@param player_id integer? Player id (OPTIONAL, defaults to local player)
----@returns boolean # True if player is the host player
+---@return boolean # True if player is the host player
 function Game.IsHostPlayer(player_id) return false end
 
 ---Check if a given player id belongs to the local player.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-islocalplayer)
 ---@param player_id integer Player id
----@returns boolean # True if player is the local player
+---@return boolean # True if player is the local player
 function Game.IsLocalPlayer(player_id) return false end
 
 ---Kick a player from the server (only available to the host of a locally running session).
@@ -323,34 +323,34 @@ function Game.KickPlayer(player_id, ban_until_restart) end
 ---Get the number of connected players.
 --- Will be 1 in single player, and 0 on a dedicated server without anyone connected
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getplayercount)
----@returns integer # Player count
+---@return integer # Player count
 function Game.GetPlayerCount() return 0 end
 
 ---Get the maximum number of multiplayer players (or 1 if offline).
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getmaxplayercount)
----@returns integer # Max player count
+---@return integer # Max player count
 function Game.GetMaxPlayerCount() return 0 end
 
 ---Get the visibility of the current multiplayer session.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getsessionvisibility)
----@returns string? # Visibility (PUBLIC, FRIENDS, INVITE, LAN or nil if there is no session)
+---@return string? # Visibility (PUBLIC, FRIENDS, INVITE, LAN or nil if there is no session)
 function Game.GetSessionVisibility() return "" end
 
 ---Get the session settings used to start hosting the session. Only the host can use this.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-gethostsessionsettings)
----@returns table? # Session settings table (or nil if not hosting a session)
+---@return table? # Session settings table (or nil if not hosting a session)
 function Game.GetHostSessionSettings() return {} end
 
 ---Get which player has a given entity selected.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getentityselectedplayerid)
 ---@param entity Entity Entity to check
----@returns table? # List of player ids (or nil if none)
+---@return table? # List of player ids (or nil if none)
 function Game.GetEntitySelectedPlayerId(entity) return {} end
 
 ---Get the display fullscreen mode.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getfullscreenmode)
----@returns WindowMode # Mode ('windowed', 'borderless', 'fullscreen')
-function Game.GetFullscreenMode() return "" end
+---@return WindowMode # Mode ('windowed', 'borderless', 'fullscreen')
+function Game.GetFullscreenMode() return "fullscreen" end
 
 ---Change the display fullscreen mode.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-setfullscreenmode)
@@ -359,27 +359,27 @@ function Game.SetFullscreenMode(p1) end
 
 ---Get active screen resolution.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getscreenresolution)
----@returns integer, integer 
+---@return integer, integer 
 function Game.GetScreenResolution() return 0,0 end
 
 ---Set screen resolution.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-setscreenresolution)
----@returns integer, integer 
+---@return integer, integer 
 function Game.SetScreenResolution() return 0,0 end
 
 ---Get a list screen resolutions appropriate for the current fullscreen mode.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getscreenresolutions)
----@returns table # Resolution list
+---@return table # Resolution list
 function Game.GetScreenResolutions() return {} end
 
 ---Apply resolution and fullscreen mode settings.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-applyscreenmoderequired)
----@returns boolean # True if a followup call to ConfirmScreenMode or RevertScreenMode is needed
+---@return boolean # True if a followup call to ConfirmScreenMode or RevertScreenMode is needed
 function Game.ApplyScreenModeRequired() return false end
 
 ---Apply resolution and fullscreen mode settings.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-applyscreenmodeneedconfirm)
----@returns boolean # True if a followup call to ConfirmScreenMode or RevertScreenMode is needed
+---@return boolean # True if a followup call to ConfirmScreenMode or RevertScreenMode is needed
 function Game.ApplyScreenModeNeedConfirm() return false end
 
 ---Confirm changed resolution and fullscreen mode settings.
@@ -392,7 +392,7 @@ function Game.RevertScreenMode() end
 
 ---Read video settings table.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getvideosettings)
----@returns VideoSettings # Settings table
+---@return VideoSettings # Settings table
 function Game.GetVideoSettings() return {} end
 
 ---Modify video settings.
@@ -408,7 +408,7 @@ function Game.PowerSavingSection(state) end
 ---Get the volume of a mix type.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getvolume)
 ---@param volume_type VolumeType Volume type ('master', 'effect', 'music', 'voice', 'ui')
----@returns integer # Volume percentage (100 means full volume)
+---@return integer # Volume percentage (100 means full volume)
 function Game.GetVolume(volume_type) return 0 end
 
 ---Set the volume of a mix type.

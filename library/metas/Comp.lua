@@ -55,7 +55,7 @@ function Comp:on_take_damage(comp, amount) end
 
 ---@param id componentId
 ---@param def Comp
----@returns CompDef # Array of entities
+---@return Comp
 function Comp:RegisterComponent(id, def) return {} end
 
 

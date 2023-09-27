@@ -5,24 +5,24 @@ Input = {}
 
 ---Check if the shift key is pressed (either left or right shift key).
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#input-isshiftdown)
----@returns boolean # Key state
+---@return boolean # Key state
 function Input.IsShiftDown() return false end
 
 ---Check if the control key is pressed (either left or right control key).
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#input-iscontroldown)
----@returns boolean # Key state
+---@return boolean # Key state
 function Input.IsControlDown() return false end
 
 ---Check if the alt key is pressed (either left or right alt key).
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#input-isaltdown)
----@returns boolean # Key state
+---@return boolean # Key state
 function Input.IsAltDown() return false end
 
 ---Check if a specific key is pressed.
 --- This does not work while a modal UI view is open
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#input-iskeydown)
 ---@param key_name string Key name
----@returns boolean # Key pressed state
+---@return boolean # Key pressed state
 function Input.IsKeyDown(key_name) return false end
 
 ---Bind a callback function to a named input action.
@@ -30,7 +30,7 @@ function Input.IsKeyDown(key_name) return false end
 ---@param action_name string Action name
 ---@param key_event KeyEvent Key event (one of 'Pressed', 'Released', 'Repeat', 'DoubleClick', 'Axis')
 ---@param callback function Lua Function
----@returns integer # Binding handle (for use with RemoveActionBinding)
+---@return integer # Binding handle (for use with RemoveActionBinding)
 function Input.BindAction(action_name, key_event, callback) return 0 end
 
 ---Bind a callback function to a named input action.
@@ -38,7 +38,7 @@ function Input.BindAction(action_name, key_event, callback) return 0 end
 ---@param action_name string Action name
 ---@param key_event KeyEvent Key event (one of 'Pressed', 'Released', 'Repeat', 'DoubleClick', 'Axis')
 ---@param callback_name string Built in game function name
----@returns integer # Binding handle (for use with RemoveActionBinding)
+---@return integer # Binding handle (for use with RemoveActionBinding)
 function Input.BindAction(action_name, key_event, callback_name) return 0 end
 
 ---Bind a callback function to a named input axis.
@@ -92,7 +92,7 @@ function Input.RemoveAxisMapping(axis_name, key_name) end
 
 ---Get a table with all key names.
 ---[Official Documentation](https://modding.desyncedgame.com/syntax.html#input-getbindingnames)
----@returns table # Table with key ids and localized key names
+---@return table # Table with key ids and localized key names
 function Input.GetBindingNames() return {} end
 
 ---Set custom input processor which can pre-process all input events.

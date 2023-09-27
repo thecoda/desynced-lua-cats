@@ -5,12 +5,12 @@ View = {}
 
 ---Get the location of the currently hovered tile.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#view-gethoveredtileposition)
----@returns integer, integer # X,Y factor of the virtual cursor
+---@return integer, integer # X,Y factor of the virtual cursor
 function View.GetHoveredTilePosition() return 0,0 end
 
 ---Get the entity currently hovered.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#view-gethoveredentity)
----@returns Entity? # Hovered entity (or nil if none)
+---@return Entity? # Hovered entity (or nil if none)
 function View.GetHoveredEntity() return Entity end
 
 ---Reset the camera to the faction home location.
@@ -37,7 +37,7 @@ function View.JumpCameraToEntities(entity) end
 
 ---Get Local camera zoom distance.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#view-getcamerazoom)
----@returns integer # Camera zoom distance
+---@return integer # Camera zoom distance
 function View.GetCameraZoom() return 0 end
 
 ---Sets the entity for the camera to follow.
@@ -47,7 +47,7 @@ function View.FollowEntity(entity) end
 
 ---Get the entity currently followed by the camera.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#view-getfollowentity)
----@returns Entity? # Followed entity (or nil if there is none)
+---@return Entity? # Followed entity (or nil if there is none)
 function View.GetFollowEntity() return Entity end
 
 ---Show movement paths of selected entities.
@@ -62,17 +62,17 @@ function View.ShowEntityStores(state) end
 
 ---Get the currently selected entities.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#view-getselectedentities)
----@returns Entity[]? # List of selected entities (or nil if empty)
+---@return Entity[]? # List of selected entities (or nil if empty)
 function View.GetSelectedEntities() return {} end
 
 ---Get the currently selected entity (will be just the first if multiple are selected).
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#view-getselectedentity)
----@returns Entity? # Selected entity (or nil if empty)
+---@return Entity? # Selected entity (or nil if empty)
 function View.GetSelectedEntity() return Entity end
 
 ---Check if an entity is selected.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#view-isselectedentity)
----@returns Entity # Entity to check
+---@return Entity # Entity to check
 function View.IsSelectedEntity() return Entity end
 
 ---Set the selected entity(s).
@@ -144,7 +144,7 @@ function View.SetPostProcess(effect_name, effect_value) end
 ---@param x integer Tile Location X
 ---@param y integer Tile Location Y
 ---@param hide_from_other_factions boolean? Set to true to not show the effect outside the local player factions visibility (OPTIONAL)
----@returns integer # Effect instance (can be used with `View.StopEffect`)
+---@return integer # Effect instance (can be used with `View.StopEffect`)
 function View.PlayEffect(effect_id, x, y, hide_from_other_factions) return 0 end
 
 ---Play effect at a location.
@@ -155,7 +155,7 @@ function View.PlayEffect(effect_id, x, y, hide_from_other_factions) return 0 end
 ---@param target_entity Entity? Target entity (OPTIONAL)
 ---@param entity_instance integer? Entity instance number (OPTIONAL)
 ---@param params table? Particle effect parameter table (OPTIONAL)
----@returns integer # Effect instance (can be used with `View.StopEffect`)
+---@return integer # Effect instance (can be used with `View.StopEffect`)
 function View.PlayEffect(effect_id, entity, socket_name, target_entity, entity_instance, params) return 0 end
 
 ---Set a parameter on an effect started with `View.PlayEffect`.
@@ -172,13 +172,13 @@ function View.StopEffect(effect_instance) end
 
 ---Checks if the player is currently in construction mode.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#view-inconstructionmode)
----@returns boolean # Is in construction mode
+---@return boolean # Is in construction mode
 function View.InConstructionMode() return false end
 
 ---Get all entities currently on screen.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#view-getvisibleentities)
 ---@param only_injured boolean? Set to true to only get entities with health not at the maximum (OPTIONAL, default false)
----@returns table # One array with 4 or 6 elements for each entity (entity, X, Y, distance, health/max_health if true was passed)
+---@return table # One array with 4 or 6 elements for each entity (entity, X, Y, distance, health/max_health if true was passed)
 function View.GetVisibleEntities(only_injured) return {} end
 
 ---Set the full 3D camera position and target location directly.
@@ -189,7 +189,7 @@ function View.SetCamera3DPosition(camera_pos, look_at_pos) end
 
 ---Get the 3D camera position and target location.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#view-getcamera3dposition)
----@returns integer # Distance from camera position to target location
+---@return integer # Distance from camera position to target location
 function View.GetCamera3DPosition() return 0 end
 
 ---Directly shift the camera in 3D space (relative to the current camera rotation).

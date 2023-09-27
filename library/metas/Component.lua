@@ -45,7 +45,7 @@ Component = {}
 
 ---Destroys a component.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#component-destroy)
----@returns table # The final state of the extra_data value after on_remove has been called
+---@return table # The final state of the extra_data value after on_remove has been called
 function Component:Destroy() return {} end
 
 ---Prepare a component for removal by clearing out all item slots and reserves related to this component.
@@ -54,50 +54,50 @@ function Component:Destroy() return {} end
 --- The function returns true if all items could be moved away or dropped (or there are no items contained).
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#component-prepareremoval)
 ---@param item_slot ItemSlot? An item slot that should be kept empty (OPTIONAL)
----@returns boolean # Result
+---@return boolean # Result
 function Component:PrepareRemoval(item_slot) return false end
 
 ---Get a register of this component.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#component-getregister)
 ---@param register Register|integer Register reference
----@returns Register # Register object
+---@return Register # Register object
 function Component:GetRegister(register) return Register end
 
 ---Get the number part of a register of this component.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#component-getregisternum)
 ---@param register Register|integer Register reference
----@returns integer # Number value
+---@return integer # Number value
 function Component:GetRegisterNum(register) return 0 end
 
 ---Get the id part of a register of this component.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#component-getregisterid)
 ---@param register Register|integer Register reference
----@returns string # Id value
+---@return string # Id value
 function Component:GetRegisterId(register) return "" end
 
 ---Get the definition table of the id stored in a register of this component.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#component-getregisterdef)
 ---@param register Register|integer Register reference
----@returns table # Definition table
+---@return table # Definition table
 function Component:GetRegisterDef(register) return {} end
 
 ---Get the entity part of a register of this component.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#component-getregisterentity)
 ---@param register Register|integer Register reference
----@returns Entity # Entity value
+---@return Entity # Entity value
 function Component:GetRegisterEntity(register) return Entity end
 
 ---Get the coordinate part of a register of this component.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#component-getregistercoord)
 ---@param register Register|integer Register reference
----@returns Point # Coordinate value
+---@return Point # Coordinate value
 function Component:GetRegisterCoord(register) return Point end
 
 ---Compare two registers of this component.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#component-registersequal)
 ---@param first_register Register|integer First register reference
 ---@param second_register Register|integer Second register reference
----@returns boolean # Comparison result
+---@return boolean # Comparison result
 function Component:RegistersEqual(first_register, second_register) return false end
 
 ---Set a register of this component.
@@ -144,19 +144,19 @@ function Component:FlagRegisterError(register, set_error_state) end
 ---Check if a register of this component is linked from another register.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#component-registerislink)
 ---@param register Register|integer Register reference
----@returns boolean # link state
+---@return boolean # link state
 function Component:RegisterIsLink(register) return false end
 
 ---Check if a register of this component is empty.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#component-registerisempty)
 ---@param register Register|integer Register reference
----@returns boolean # Empty
+---@return boolean # Empty
 function Component:RegisterIsEmpty(register) return false end
 
 ---Check if a register of this component is in error state.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#component-registeriserror)
 ---@param register Register|integer Register reference
----@returns boolean # Error
+---@return boolean # Error
 function Component:RegisterIsError(register) return false end
 
 ---Check if two registers have a connection via link(s).
@@ -164,7 +164,7 @@ function Component:RegisterIsError(register) return false end
 ---@param register_one Register|integer Register one
 ---@param register_two Register|integer Register two
 ---@param register_two_owner Entity|Component|nil Different entity that holds the second register (OPTIONAL)
----@returns boolean # Check result
+---@return boolean # Check result
 function Component:RegisterHasConnection(register_one, register_two, register_two_owner) return false end
 
 
@@ -189,7 +189,7 @@ function Component:UnlinkRegisterFromRegister(target_register, source_register, 
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#component-getregisterlinksource)
 ---@param target_register Register|integer Target register reference
 ---@param holder Component|Entity Entity that holds the source register
----@returns Component? # Component that holds the source register or nil if frame register (unless entity/component specified)
+---@return Component? # Component that holds the source register or nil if frame register (unless entity/component specified)
 ---@overload fun(target_register: Register|integer): Component?
 function Component:GetRegisterLinkSource(target_register, holder) return Component end
 
@@ -197,13 +197,13 @@ function Component:GetRegisterLinkSource(target_register, holder) return Compone
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#component-getregisterlinktarget)
 ---@param source_register Register|integer Source register reference
 ---@param holder Entity|Component|nil Different entity that holds the source register (OPTIONAL)
----@returns integer? # Target register index relative to this component (or nil if not exist)
+---@return integer? # Target register index relative to this component (or nil if not exist)
 function Component:GetRegisterLinkTarget(source_register, holder) return 0 end
 
 ---Get an item slot of this component.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#component-getslot)
 ---@param slot_number integer Slot number (starts at 1)
----@returns ItemSlot # Item slot object
+---@return ItemSlot # Item slot object
 function Component:GetSlot(slot_number) return ItemSlot end
 
 ---Clear activation change flags that would trigger the on_update callback in the next tick.
@@ -219,20 +219,20 @@ function Component:ClearActivationChangeFlags() end
 ---@param ingredients table Ingredients table (item_id keys and count values)
 ---@param outputs table? Outputs table (item_id keys and count values) (when nil, act like PrepareConsumeProcess)
 ---@param order_count integer? Order count (if multiple processes are queued up) (OPTIONAL, default 1)
----@returns Register? # A register value describing the first missing ingredient (or nil if all ingredients are available)
+---@return Register? # A register value describing the first missing ingredient (or nil if all ingredients are available)
 function Component:PrepareProduceProcess(ingredients, outputs, order_count) return Register end
 
 ---Set up a process that generates output items.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#component-preparegenerateprocess)
 ---@param outputs table Outputs table (item_id keys and count values)
----@returns boolean # Returns true if inventory space for outputs are available now and process can start
+---@return boolean # Returns true if inventory space for outputs are available now and process can start
 function Component:PrepareGenerateProcess(outputs) return false end
 
 ---Set up a process that consumes ingredients.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#component-prepareconsumeprocess)
 ---@param ingredients table Ingredients table (item_id keys and count values)
 ---@param order_count integer? Order count (if multiple processes are queued up) (OPTIONAL, default 1)
----@returns Register? # A register value describing the first missing ingredient (or nil if all ingredients are available)
+---@return Register? # A register value describing the first missing ingredient (or nil if all ingredients are available)
 ---@overload fun(ingredients: table, item_slot: ItemSlot): Register?
 function Component:PrepareConsumeProcess(ingredients, order_count) return Register end
 
@@ -247,13 +247,13 @@ function Component:CancelProcess() end
 ---If there is a prepared process, get an item slot from which items are consumed from.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#component-getprocessconsumeslot)
 ---@param slot_number integer? This selects the slot when there are multiple consume slots (OPTIONAL, default 1)
----@returns ItemSlot? # Consuming item slot (nil if no active consume process or invalid argument)
+---@return ItemSlot? # Consuming item slot (nil if no active consume process or invalid argument)
 function Component:GetProcessConsumeSlot(slot_number) return ItemSlot end
 
 ---If there is a prepared process, get an item slot from which items are output to.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#component-getprocessoutputslot)
 ---@param slot_number integer? This selects the slot when there are multiple output slots (OPTIONAL, default 1)
----@returns ItemSlot? # Output item slot (nil if no active generate process or invalid argument)
+---@return ItemSlot? # Output item slot (nil if no active generate process or invalid argument)
 function Component:GetProcessOutputSlot(slot_number) return ItemSlot end
 
 ---Order an item through this component
@@ -269,7 +269,7 @@ function Component:GetProcessOutputSlot(slot_number) return ItemSlot end
 ---@param into_slot ItemSlot? Order items into this slot (OPTIONAL)
 ---@param item_id itemId Item id to be ordered
 ---@param amount integer Amount to be ordered
----@returns integer # Order ID created or modified
+---@return integer # Order ID created or modified
 function Component:OrderItem(into_slot, item_id, amount) return 0 end
 
 ---Turns component to look at a target entity or location.
@@ -285,7 +285,7 @@ function Component:RotateComponent(target, rotate_entity_not_component) end
 ---@param target Entity|Component|Point Target entity to move next to
 ---@param range integer? Range of how close by to stop (OPTIONAL, default 1)
 ---@param avoid_distractions boolean? Keep moving when component sleeps or starts working (OPTIONAL, default false)
----@returns boolean # Returns true if movement is needed, otherwise the entity is already in place
+---@return boolean # Returns true if movement is needed, otherwise the entity is already in place
 ---@overload fun(x: integer, y: integer, range: integer?, avoid_distractions: boolean?): boolean
 function Component:RequestStateMove(target, range, avoid_distractions) return false end
 
@@ -361,7 +361,7 @@ function Component:CauseToString(cause) end
 ---Search for the closest entity of all matching entities inside this components trigger_radius.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#component-findclosesttriggeringentity)
 ---@param callback function Callback called for each entity in range in order of distance, return true from this to stop the search
----@returns Entity? # The entity for which the callback returned true (or nil if none)
+---@return Entity? # The entity for which the callback returned true (or nil if none)
 function Component:FindClosestTriggeringEntity(callback) return Entity end
 
 ---Spawn particle/sound effect on this component.
@@ -371,7 +371,7 @@ function Component:FindClosestTriggeringEntity(callback) return Entity end
 ---@param socket_name string? Socket name (OPTIONAL)
 ---@param target_entity Entity? Target entity (OPTIONAL)
 ---@param target_render_instance integer? Target render instance (OPTIONAL)
----@returns integer # Effect instance index (only for looping effects, can be used with `entity:StopEffect`)
+---@return integer # Effect instance index (only for looping effects, can be used with `entity:StopEffect`)
 function Component:PlayEffect(effect_id, socket_name, target_entity, target_render_instance) return 0 end
 
 ---Play effect for working component.
