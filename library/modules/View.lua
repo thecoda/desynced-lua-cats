@@ -74,7 +74,7 @@ function View.GetSelectedEntity() return Entity end
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#view-isselectedentity)
 ---@param entity Entity Entity to check
 ---@return boolean 
-function View.IsSelectedEntity(entity: Entity) return true end
+function View.IsSelectedEntity(entity) return true end
 
 ---Set the selected entity(s).
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#view-selectentities)

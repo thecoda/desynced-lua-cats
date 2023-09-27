@@ -7,6 +7,7 @@
 ---@field slots table<SlotType, integer>?
 ---@field components table<string, string>?
 ---@field construction_recipe ConstructionRecipe?
+---@field production_recipe ProductionRecipe?
 ---@field desc string?
 ---@field race Race?
 ---@field size FrameSize?

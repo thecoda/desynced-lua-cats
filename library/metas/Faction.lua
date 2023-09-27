@@ -14,7 +14,7 @@
 ---@field id factionId Faction id
 ---@field name string Name
 ---@field seed integer Faction seed
----@field unlocks string[] List of unlocked ids
+---@field unlocks table<string, boolean> List of unlocked ids
 ---@field unlocked_techs techId[] tech id list
 ---@field unlocked_items itemId[] item id list
 ---@field unlocked_frames frameId[] frame id list

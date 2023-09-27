@@ -5,9 +5,9 @@ Tool = {}
 
 ---Create a checksum of a value.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#tool-hash)
----@param value any Value (can be a table or of any other type)
+---@param ... any Value (can be a table or of any other type)
 ---@return integer # Checksum
-function Tool.Hash(value) return 0 end
+function Tool.Hash(...) return 0 end
 
 ---Convert a lua table to a string.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#tool-tabletostring)

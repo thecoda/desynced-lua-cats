@@ -19,11 +19,11 @@ Follow the following steps to get started with this Addon.
     "Lua.runtime.version": "Lua 5.4",
     "Lua.workspace.checkThirdParty": false,
     "Lua.workspace.library": [
-        "path\\to\\DesyncedLLSAddon\\library"
+        "path\\to\\esynced-lua-cats\\library"
     ]
 }
 ```
 
 [desynced]: https://www.desyncedgame.com
 [vscode]: https://code.visualstudio.com/
-[lls]: https://github.com/LuaLS/lua-language-server# desynced-lua-cats
+[lls]: https://github.com/LuaLS/lua-language-server#

@@ -107,12 +107,13 @@ function Widget:TweenTo(param_name, target_value, duration_in_millis, wait_in_mi
 ---Animate a numerical property
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#widget-tweenfromto)
 ---@param param_name string Parameter name
----@param start_value integer Start value
----@param target_value integer Target value
----@param duration_in_millis integer? Duration in milliseconds (OPTIONAL, default 400)
----@param wait_in_millis integer? Wait time in milliseconds (OPTIONAL, default 0)
----@param ease_function string? Easing function (OPTIONAL, default "InOutQuad")
----@param callback function? Animation finished callback (OPTIONAL)
+---@param start_value number Start value
+---@param target_value number Target value
+---@param duration_in_millis integer Duration in milliseconds (OPTIONAL, default 400)
+---@param wait_in_millis integer Wait time in milliseconds (OPTIONAL, default 0)
+---@param ease_function string Easing function (OPTIONAL, default "InOutQuad")
+---@param callback function Animation finished callback (OPTIONAL)
+---@overload fun(param_name: string, start_value: number, target_value: number, duration_in_millis: integer, ease_function: string, callback: function?)
 function Widget:TweenFromTo(param_name, start_value, target_value, duration_in_millis, wait_in_millis, ease_function, callback) end
 
 ---Stop an active tween

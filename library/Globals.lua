@@ -35,9 +35,19 @@ PlayerAction = EventListener
 UIMsg = EventListener
 MapMsg = EventListener
 
----@param msg_string componentId
-function L(msg_string, ...) end
+---@param msg_string string
+---@return string
+function L(msg_string, ...) return ""end
 
+---@param str string
+---@return string
+function NOLOC(str) return "" end
+
+---@param a integer
+---@param b integer
+---@param c integer
+---@return integer
+function math.randomseed(a, b, c) return 0 end
 
 --- ToDo: Add documentation
 ModPackage = {}
