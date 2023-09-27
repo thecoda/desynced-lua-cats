@@ -7,7 +7,8 @@
 ---@field key integer key
 ---@field id string Component id
 ---@field base_id string Component base id (base_id if set otherwise regular id)
----@field def table Component definition
+---@field def ComponentDef Component definition
+---@field visual Visual
 ---@field visual_id string visual id
 ---@field visual_def table visual definition table
 ---@field socket_index integer Socket index (or 0 if hidden)

@@ -29,7 +29,7 @@ function Action.SendForSelectedEntities(action_id, additional_data) end
 ---Will automatically filter out construction sites and entities not owned by the local player faction
 ---[Official Documentation](https://modding.desyncedgame.com/syntax.html#action-sendforentities)
 ---@param action_id actionId Action id
----@param entities Entity[] Array of entities the action is for
+---@param entities Entity|Entity[]|nil Array of entities the action is for
 ---@param additional_data table? Additional action data (can be nil)
 function Action.SendForEntities(action_id, entities, additional_data) end
 

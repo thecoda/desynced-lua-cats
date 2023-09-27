@@ -26,7 +26,7 @@ function Tool.StringToTable(encoded_string, identifier_char) return {} end
 ---Store a LUA table into the OS clipboard.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#tool-setclipboard)
 ---@param value table Table to set the clipboard to
----@param identifier_char string A one character identifier to be included in the prefix of the encoded string
+---@param identifier_char string? A one character identifier to be included in the prefix of the encoded string
 function Tool.SetClipboard(value, identifier_char) end
 
 ---Retrieve a LUA table from the OS clipboard.

@@ -42,7 +42,8 @@ function Faction:Unlock(id, show_notification) return false end
 ---Check if something was unlocked.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#faction-isunlocked)
 ---@param id string Id to check
-function Faction:IsUnlocked(id) end
+---@return boolean
+function Faction:IsUnlocked(id) return true end
 
 ---Check if a tech is available for research.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#faction-isresearchable)

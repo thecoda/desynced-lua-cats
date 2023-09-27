@@ -47,8 +47,8 @@ function UI.MakeModOptionsWidget(mod_id) return Widget end
 
 ---Get the size of the screen scaled in UI coordinates.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#ui-getscreensize)
----@return integer[]
-function UI.GetScreenSize() return 0 end
+---@return integer, integer
+function UI.GetScreenSize() return 0, 0 end
 
 ---Pop up a context menu or window.
 --- If there isn't enough space in the direction it will flip to the other side
@@ -72,8 +72,8 @@ function UI.MenuPopup(widget, direction, alignment, next_to, x_offset, y_offset)
 ---@param direction Direction? Direction (OPTIONAL, default DOWN or UP/LEFT/RIGHT)
 ---@param alignment Alignment? Alignment (OPTIONAL, default MIDDLE or LEFT/RIGHT/TOP/BOTTOM)
 ---@param next_to Widget? Pop up next to this widget (OPTIONAL, default pop up at mouse cursor)
----@param x_offset integer Attachment X offset
----@param y_offset integer Attachment Y offset
+---@param x_offset integer? Attachment X offset
+---@param y_offset integer? Attachment Y offset
 ---@return Widget # The widget passed in the first argument or that was created
 function UI.MenuPopup(markup, properties, direction, alignment, next_to, x_offset, y_offset) return Widget end
 

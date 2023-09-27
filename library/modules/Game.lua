@@ -136,8 +136,9 @@ function Game.GetSaveGameList() return {} end
 --- - now_enabled: Set if the save was made with an addon that has since been enabled
 --- The tables in the resulting array can optionally have error flags 'error_missing' or 'error_version' set.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getsavegamemodpackages)
+---@param slot_name string? Slot name
 ---@return table # Array of mod package info tables
-function Game.GetSaveGameModPackages() return {} end
+function Game.GetSaveGameModPackages(slot_name) return {} end
 
 ---Get if any save game exists.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-haveanysavegame)
@@ -201,8 +202,8 @@ function Game.GetVersionString() return "" end
 
 ---Get the local player faction.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-getlocalplayerfaction)
----@return Faction|string|nil # Local player faction (or nil if there is none)
-function Game.GetLocalPlayerFaction() return Faction|string end
+---@return Faction -- |string|nil # Local player faction (or nil if there is none)
+function Game.GetLocalPlayerFaction() return {} end
 
 ---Get the local player extra data.
 --- If called without argument from a mod other than 'Main', will return a mod specific child table parent.mods[mod_id]
@@ -397,7 +398,7 @@ function Game.GetVideoSettings() return {} end
 
 ---Modify video settings.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#game-setvideosettings)
----@param settings VideoSettings # Table with settings that are to be changed
+---@param settings table # Table with settings that are to be changed
 function Game.SetVideoSettings(settings) end
 
 ---Starts or stops power saving if power save mode has been enabled.

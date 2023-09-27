@@ -72,8 +72,9 @@ function View.GetSelectedEntity() return Entity end
 
 ---Check if an entity is selected.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#view-isselectedentity)
----@return Entity # Entity to check
-function View.IsSelectedEntity() return Entity end
+---@param entity Entity Entity to check
+---@return boolean 
+function View.IsSelectedEntity(entity: Entity) return true end
 
 ---Set the selected entity(s).
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#view-selectentities)
@@ -189,8 +190,8 @@ function View.SetCamera3DPosition(camera_pos, look_at_pos) end
 
 ---Get the 3D camera position and target location.
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#view-getcamera3dposition)
----@return integer # Distance from camera position to target location
-function View.GetCamera3DPosition() return 0 end
+---@return Point3D, Point3D, any # Distance from camera position to target location
+function View.GetCamera3DPosition() return {}, {}, {} end
 
 ---Directly shift the camera in 3D space (relative to the current camera rotation).
 --- [Official Documentation](https://modding.desyncedgame.com/syntax.html#view-pancamera3dposition)

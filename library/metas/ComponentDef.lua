@@ -1,6 +1,6 @@
----@meta CompDef
+---@meta ComponentDef
 
----@class CompDef
+---@class ComponentDef
 ---@field name string?
 ---@field desc string?
 ---@field tag string?
@@ -27,14 +27,13 @@
 ---@field non_removable boolean?
 ---@field production_recipe ProductionRecipe?
 ---@field action_tooltip string?
----@field get_ui (fun(self: CompDef, comp: Component): any)?
----@field on_add fun(self: CompDef, comp: Component)?
----@field on_remove fun(self: CompDef, comp: Component)?
----@field on_update fun(self: CompDef, comp: Component, cause: integer)?
----@field action_click fun(self: CompDef, comp: Component)?
----@field on_trigger fun(self: CompDef, comp: Component, other_entity: Entity)?
----@field on_take_damage fun(self: CompDef, comp: Component, amount: integer)?
----@field RegisterComponent (fun(self: CompDef, id: componentId, def: CompDef): CompDef)?
-CompDef = {}
+---@field get_ui (fun(self: ComponentDef, comp: Component):Widget?,Widget?)?
+---@field on_add fun(self: ComponentDef, comp: Component)?
+---@field on_remove fun(self: ComponentDef, comp: Component)?
+---@field on_update fun(self: ComponentDef, comp: Component, cause: integer)?
+---@field action_click fun(self: ComponentDef, comp: Component)?
+---@field on_trigger fun(self: ComponentDef, comp: Component, other_entity: Entity)?
+---@field on_take_damage fun(self: ComponentDef, comp: Component, amount: integer)?
+---@field RegisterComponent (fun(self: ComponentDef, id: componentId, def: ComponentDef): ComponentDef)?
 
 

@@ -1,6 +1,7 @@
 ---@meta EventListener
 ---A global event listener used for various APIs
 ---[Official Documentation](https://modding.desyncedgame.com/syntax.html#eventlistener)
+
 EventListener = {}
 
 ---Bind a function to this listener, usually done with a function assignment like.
